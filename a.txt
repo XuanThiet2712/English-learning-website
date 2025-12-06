@@ -1,2 +1,6 @@
 hello
+<<<<<<< HEAD
 cho thiet
+=======
+cho phu
+>>>>>>> 97ab2a4f3635b16df3102b7ca1129218a86ab68f
