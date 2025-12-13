@@ -1,0 +1,606 @@
+/* vocabulary.css */
+.topics-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.topic-item {
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.topic-item:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.topic-item.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.topic-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.topic-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.topic-item:hover .topic-icon,
+.topic-item.active .topic-icon {
+  background: white;
+  color: #667eea;
+  transform: scale(1.1) rotate(360deg);
+}
+
+.topic-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.topic-item:hover .topic-title,
+.topic-item.active .topic-title {
+  color: white;
+}
+
+.topic-stats {
+  display: flex;
+  gap: 15px;
+  font-size: 0.85rem;
+  padding-left: 52px;
+}
+
+.topic-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+.topic-item:hover .topic-stat,
+.topic-item.active .topic-stat {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* header - bo loc  */
+.vocab-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.vocab-header:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.vocab-header h2 {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vocab-filters {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #667eea;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 16px 18px 16px 50px;
+  border: 2px solid rgba(102, 126, 234, 0.15);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  background: rgba(248, 249, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.1);
+}
+
+.filter-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 10px 20px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: rgba(248, 249, 255, 0.5);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #667eea;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-chip:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+  border-color: #667eea;
+}
+
+.filter-chip.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* danh sach tu vung */
+.vocabulary-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.vocab-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 0; 
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden; 
+}
+
+.vocab-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Ảnh minh họa */
+.vocab-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.vocab-image.no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: white;
+}
+
+/* Content wrapper */
+.vocab-content {
+  padding: 20px;
+}
+
+.vocab-status {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10; /* Nằm trên ảnh */
+  border: 2px solid white;
+}
+
+.vocab-status.not-learned {
+  background: #94a3b8;
+}
+
+.vocab-status.learning {
+  background: #f59e0b;
+  animation: pulse-status 2s infinite;
+}
+
+.vocab-status.mastered {
+  background: #10b981;
+}
+
+@keyframes pulse-status {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.vocab-english {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 8px;
+}
+
+.vocab-phonetic {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.vocab-vietnamese {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.vocab-example {
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 10px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.vocab-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.vocab-actions.in-content {
+  padding: 0 20px 20px 20px; 
+}
+
+.vocab-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.vocab-btn-sound {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.vocab-btn-sound:hover {
+  background: #667eea;
+  color: white;
+  transform: scale(1.05);
+}
+
+.vocab-btn-learn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.vocab-btn-learn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+/* MODAL HỌC TỪ VỰNG - FLASHCARD*/
+#learnModal .modal-content {
+  background: linear-gradient(145deg, #ffffff, #f8f9ff);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+#learnModal .modal-header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 18px 18px 0 0;
+  padding: 20px 25px;
+  border-bottom: none;
+}
+
+#learnModal .modal-body {
+  padding: 30px;
+}
+
+/* Flashcard */
+.flashcard {
+  width: 100%;
+  height: 400px; 
+  perspective: 1000px;
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  /* Ảnh không tràn */
+}
+
+.flashcard-front {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 0; /
+}
+
+.flashcard-back {
+  background: white;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+/* Ảnh trong flashcard */
+.flashcard-image {
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.flashcard-text-content {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.word-english {
+  font-size: 2.5rem; /* Giảm nhỏ vì có ảnh */
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.word-phonetic {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.btn-sound {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-sound:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.word-vietnamese {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.word-example {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+}
+
+/* Tiến độ học */
+.learn-progress {
+  margin-bottom: 20px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.progress {
+  height: 10px;
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+/* Nút điều khiển */
+.learn-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.learn-actions .btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.learn-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*
+   EMPTY STATE
+   */
+.empty-state {
+  text-align: center;
+  padding: 80px 30px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state i {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.empty-state h4 {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.empty-state p {
+  color: #999;
+  font-size: 0.95rem;
+}
+
+/*
+   RESPONSIVE
+*/
+@media (max-width: 768px) {
+  .vocabulary-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .flashcard {
+    height: 350px; /* Giảm chiều cao trên mobile */
+  }
+  
+  .flashcard-image {
+    height: 40%; /* Ảnh nhỏ hơn trên mobile */
+  }
+  
+  .word-english {
+    font-size: 2rem;
+  }
+  
+  .word-vietnamese {
+    font-size: 1.5rem;
+  }
+  
+  .learn-actions {
+    flex-direction: column;
+  }
+  
+  .learn-actions .btn {
+    width: 100%;
+  }
+  
+  .vocab-image {
+    height: 140px; /* Ảnh nhỏ hơn trên mobile */
+  }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học Từ Vựng - Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="vocabulary.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+        <i class="fas fa-graduation-cap"></i>
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+          
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../exercise/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main>
+    <div class="container-main">
+      <div class="row-layout">
+        
+       <!-- danh muc chu de  -->
+        <aside class="sidebar">
+          <h3>
+            <i class="fas fa-list me-2"></i>
+            Chủ đề từ vựng
+          </h3>
+          
+          <!-- Thống kê học tập -->
+          <div class="progress-card">
+            <h4>
+              <i class="fas fa-chart-line"></i>
+              Tiến độ của bạn
+            </h4>
+            <div class="progress-grid">
+              <div class="progress-box">
+                <i class="fas fa-book"></i>
+                <span class="progress-value" id="totalLearned">0</span>
+                <span class="progress-label">Đã học</span>
+              </div>
+              <div class="progress-box">
+                <i class="fas fa-star"></i>
+                <span class="progress-value" id="totalMastered">0</span>
+                <span class="progress-label">Thành thạo</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Menu chủ đề -->
+          <div id="topicsList" class="topics-list">
+          
+          </div>
+        </aside>
+
+        <!-- main content -->
+        <div class="main-content">
+          
+          <!-- Header -->
+          <div class="vocab-header">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h2>
+                  <i class="fas fa-book me-2"></i>
+                  Học từ vựng theo chủ đề
+                </h2>
+                <p class="text-muted">Nâng cao vốn từ vựng tiếng Anh của bạn</p>
+              </div>
+              
+              <!-- NÚT RANDOM  -->
+              <button class="btn btn-warning btn-lg" onclick="startRandomLearning()" 
+                      style="box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);">
+                <i class="fas fa-random me-2"></i>Học Random
+              </button>
+            </div>
+          </div>
+
+          <!-- Bộ lọc và tìm kiếm -->
+          <div class="vocab-filters">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" placeholder="Tìm kiếm từ vựng..." 
+                     oninput="searchVocabulary()">
+            </div>
+            
+            <div class="filter-chips">
+              <button class="filter-chip active" onclick="filterByStatus('all', this)">
+                <i class="fas fa-list"></i> Tất cả
+              </button>
+              <button class="filter-chip" onclick="filterByStatus('not-learned', this)">
+                <i class="fas fa-circle"></i> Chưa học
+              </button>
+              <button class="filter-chip" onclick="filterByStatus('learning', this)">
+                <i class="fas fa-clock"></i> Đang học
+              </button>
+              <button class="filter-chip" onclick="filterByStatus('mastered', this)">
+                <i class="fas fa-check-circle"></i> Thành thạo
+              </button>
+            </div>
+          </div>
+
+          <!-- Danh sách từ vựng -->
+          <div id="vocabularyList" class="vocabulary-list">
+            <!-- Sẽ được render bằng JS -->
+          </div>
+
+          <!-- Empty state -->
+          <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h4>Không có từ vựng nào</h4>
+            <p>Hãy chọn chủ đề từ menu bên trái</p>
+          </div>
+        </div>
+
+        <!--THÔNG TIN USER-->
+        <aside class="user-info-card" id="userCard">
+          <div class="login-required">
+            <i class="fas fa-user-circle"></i>
+            <h4>Vui lòng đăng nhập</h4>
+            <p>Đăng nhập để lưu tiến độ học tập của bạn</p>
+            <button class="btn btn-primary btn-lg" onclick="showGlobalLoginModal()">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập ngay
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL HỌC TỪ VỰNG -->
+  <div class="modal fade" id="learnModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-graduation-cap me-2"></i>
+            <span id="learnModeTitle">Học từ vựng</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Flashcard -->
+          <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="flashcard-inner">
+              <div class="flashcard-front">
+                <div class="flashcard-text-content">
+                  <div class="word-english">Click để lật thẻ</div>
+                  <div class="word-phonetic">/...</div>
+                  <button class="btn-sound" onclick="playSound(event)">
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="flashcard-back">
+                <div class="word-vietnamese" id="wordVietnamese">...</div>
+                <div class="word-example" id="wordExample">...</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tiến độ -->
+          <div class="learn-progress">
+            <div class="progress-info">
+              <span id="currentWord">1</span> / <span id="totalWords">10</span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar" id="progressBar" style="width: 10%"></div>
+            </div>
+          </div>
+
+          <!-- Nút điều khiển -->
+          <div class="learn-actions">
+            <button class="btn btn-secondary" onclick="previousWord()">
+              <i class="fas fa-chevron-left"></i> Trước
+            </button>
+            <button class="btn btn-success" onclick="markAsLearned()">
+              <i class="fas fa-check"></i> Đã học
+            </button>
+            <button class="btn btn-primary" onclick="nextWord()">
+              <i class="fas fa-chevron-right"></i>Sau 
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS CONTAINER -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="vocabulary-data.js"></script>
+  <script src="vocabulary.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+    
+    // HÀM HỌC RANDOM 
+    function startRandomLearning() {
+      if (!currentUser) {
+        showNotification('Vui lòng đăng nhập để học từ vựng!', 'warning');
+        showGlobalLoginModal();
+        return;
+      }
+      
+      if (!currentTopic) {
+        showNotification('Vui lòng chọn chủ đề trước!', 'warning');
+        return;
+      }
+      
+      // Cập nhật tiêu đề modal
+      document.getElementById('learnModeTitle').innerHTML = 
+        '<i class="fas fa-random me-2"></i>Học Random';
+      
+      // Gọi hàm học với tham số random 
+      startLearning(currentTopic, true);
+      
+      showNotification('🎲 Đã random thứ tự từ vựng!', 'info');
+    }
+  </script>
+
+</body>
+</html>

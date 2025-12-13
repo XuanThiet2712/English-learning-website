@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài Tập Ôn Luyện - Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="exercise.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+        <i class="fas fa-graduation-cap"></i>
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+          <!-- Learning English Dropdown -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main>
+    <div class="container-main">
+      <div class="row-layout">
+        
+
+        <aside class="sidebar">
+          <h3>
+            <i class="fas fa-chart-bar me-2"></i>
+            Thống kê của bạn
+          </h3>
+          
+          <!-- Tiến độ -->
+          <div class="progress-card">
+            <h4>
+              <i class="fas fa-trophy"></i>
+              Thành tích
+            </h4>
+            <div class="progress-grid">
+              <div class="progress-box">
+                <i class="fas fa-check-circle"></i>
+                <span class="progress-value" id="totalCompleted">0</span>
+                <span class="progress-label">Đã làm</span>
+              </div>
+              <div class="progress-box">
+                <i class="fas fa-star"></i>
+                <span class="progress-value" id="totalCorrect">0</span>
+                <span class="progress-label">Đúng</span>
+              </div>
+              <div class="progress-box">
+                <i class="fas fa-percent"></i>
+                <span class="progress-value" id="accuracyRate">0%</span>
+                <span class="progress-label">Độ chính xác</span>
+              </div>
+              <div class="progress-box">
+                <i class="fas fa-fire"></i>
+                <span class="progress-value" id="streak">0</span>
+                <span class="progress-label">Streak</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Từ cần ôn -->
+          <div class="review-card">
+            <h4>
+              <i class="fas fa-clock"></i>
+              Cần ôn tập
+            </h4>
+            <div class="review-stats">
+              <div class="review-item urgent">
+                <i class="fas fa-exclamation-circle"></i>
+                <div>
+                  <span class="review-number" id="urgentCount">0</span>
+                  <span class="review-label">Khẩn cấp</span>
+                </div>
+              </div>
+              <div class="review-item warning">
+                <i class="fas fa-clock"></i>
+                <div>
+                  <span class="review-number" id="soonCount">0</span>
+                  <span class="review-label">Sắp đến hạn</span>
+                </div>
+              </div>
+              <div class="review-item safe">
+                <i class="fas fa-check"></i>
+                <div>
+                  <span class="review-number" id="okCount">0</span>
+                  <span class="review-label">Vẫn ổn</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+   
+        <div class="main-content">
+          
+          <!-- Header -->
+          <div class="exercise-header">
+            <div>
+              <h2>
+                <i class="fas fa-pen me-2"></i>
+                Bài tập ôn luyện
+              </h2>
+              <p class="text-muted">Học thông minh với phương pháp đường cong lãng quên</p>
+            </div>
+          </div>
+
+          <!-- Chế độ luyện tập -->
+          <div class="exercise-modes">
+            
+            <!-- Ôn tập theo lịch -->
+            <div class="mode-card review-mode" onclick="startReviewMode()">
+              <div class="mode-icon">
+                <i class="fas fa-redo-alt"></i>
+              </div>
+              <div class="mode-content">
+                <h3>Ôn tập theo lịch</h3>
+                <p>Ôn lại những từ/cấu trúc cần ôn hôm nay</p>
+                <div class="mode-badge" id="reviewBadge">
+                  <i class="fas fa-tasks"></i>
+                  <span id="reviewCount">0</span> câu cần ôn
+                </div>
+              </div>
+            </div>
+
+            <!-- Luyện từ vựng -->
+            <div class="mode-card vocab-mode" onclick="startVocabMode()">
+              <div class="mode-icon">
+                <i class="fas fa-book"></i>
+              </div>
+              <div class="mode-content">
+                <h3>Luyện từ vựng</h3>
+                <p>Trắc nghiệm từ vựng theo chủ đề</p>
+                <div class="mode-badge">
+                  <i class="fas fa-list"></i>
+                  Tất cả chủ đề
+                </div>
+              </div>
+            </div>
+
+            <!-- Luyện ngữ pháp -->
+            <div class="mode-card grammar-mode" onclick="startGrammarMode()">
+              <div class="mode-icon">
+                <i class="fas fa-language"></i>
+              </div>
+              <div class="mode-content">
+                <h3>Luyện ngữ pháp</h3>
+                <p>Trắc nghiệm ngữ pháp đã học</p>
+                <div class="mode-badge">
+                  <i class="fas fa-graduation-cap"></i>
+                  30 ngày
+                </div>
+              </div>
+            </div>
+
+            <!-- Luyện tổng hợp -->
+            <div class="mode-card mixed-mode" onclick="startMixedMode()">
+              <div class="mode-icon">
+                <i class="fas fa-random"></i>
+              </div>
+              <div class="mode-content">
+                <h3>Luyện tổng hợp</h3>
+                <p>Kết hợp cả từ vựng và ngữ pháp</p>
+                <div class="mode-badge">
+                  <i class="fas fa-fire"></i>
+                  Thử thách
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Lịch sử -->
+          <div class="history-section">
+            <h3>
+              <i class="fas fa-history me-2"></i>
+              Lịch sử luyện tập
+            </h3>
+            <div id="historyList" class="history-list">
+              <div class="empty-history">
+                <i class="fas fa-inbox"></i>
+                <p>Chưa có lịch sử luyện tập</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        
+        <aside class="user-info-card" id="userCard">
+          <div class="login-required">
+            <i class="fas fa-user-circle"></i>
+            <h4>Vui lòng đăng nhập</h4>
+            <p>Đăng nhập để lưu tiến độ ôn tập của bạn</p>
+            <button class="btn btn-primary btn-lg" onclick="showGlobalLoginModal()">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập ngay
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL BÀI TẬP -->
+  <div class="modal fade" id="exerciseModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-pen me-2"></i>
+            <span id="exerciseTitle">Bài tập</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          
+          <!-- Tiến độ -->
+          <div class="exercise-progress">
+            <div class="progress-info">
+              <span>Câu <span id="currentQ">1</span> / <span id="totalQ">10</span></span>
+              <span>Điểm: <span id="currentScore">0</span></span>
+            </div>
+            <div class="progress">
+              <div class="progress-bar bg-success" id="exerciseProgressBar" style="width: 10%"></div>
+            </div>
+          </div>
+
+          <!-- Câu hỏi -->
+          <div id="questionContainer" class="question-container">
+    <!-- js -->
+          </div>
+
+          <!-- Đáp án -->
+          <div id="optionsContainer" class="options-container">
+    <!-- js -->
+          </div>
+
+          <!-- Giải thích -->
+          <div id="explanationBox" class="explanation-box" style="display: none;">
+            <div class="explanation-header">
+              <i class="fas fa-lightbulb"></i>
+              <span>Giải thích</span>
+            </div>
+            <div id="explanationText"></div>
+          </div>
+
+          <!-- Nút điều khiển -->
+          <div class="exercise-actions">
+            <button class="btn btn-secondary" onclick="skipQuestion()" id="skipBtn">
+              <i class="fas fa-forward"></i> Bỏ qua
+            </button>
+            <button class="btn btn-primary" onclick="checkAnswer()" id="checkBtn">
+              <i class="fas fa-check"></i> Kiểm tra
+            </button>
+            <button class="btn btn-success" onclick="nextQuestion()" id="nextBtn" style="display: none;">
+              Tiếp theo <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS CONTAINER -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="../../js/attendance.js"></script>
+  
+  <script src="../vocabulary/vocabulary-data.js"></script>
+  <script src="../grammar/grammar-data.js"></script>
+  
+  <script src="exercise.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>

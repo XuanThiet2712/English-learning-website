@@ -1,0 +1,887 @@
+/* 
+   GRAMMAR CSS 
+   LỘ TRÌNH HỌC - SIDEBAR TRÁI
+    */
+.roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Nhóm tuần */
+.week-group {
+  margin-bottom: 20px;
+}
+
+/* Header tuần */
+.week-header {
+  background: linear-gradient(135deg, rgba(240, 147, 251, 0.15), rgba(245, 87, 108, 0.1));
+  padding: 15px 18px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #f093fb;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(240, 147, 251, 0.2);
+}
+
+.week-header:hover {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+.week-header i {
+  font-size: 1.2rem;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 8px;
+}
+
+.week-header:hover i {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Ngày học */
+.day-item {
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(240, 147, 251, 0.15);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.day-item:hover {
+  background: rgba(240, 147, 251, 0.08);
+  border-color: #f093fb;
+  transform: translateX(5px);
+  box-shadow: 0 3px 10px rgba(240, 147, 251, 0.2);
+}
+
+/* Ngày đã hoàn thành */
+.day-item.completed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(5, 150, 105, 0.08));
+  border-color: #10b981;
+}
+
+.day-item.completed::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.3);
+}
+
+/* Số ngày */
+.day-number {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0 3px 10px rgba(240, 147, 251, 0.3);
+}
+
+.day-item.completed .day-number {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* Nội dung ngày */
+.day-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.day-title {
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 4px 0;
+  font-size: 0.98rem;
+}
+
+.day-subtitle {
+  font-size: 0.82rem;
+  color: #666;
+  margin: 0;
+}
+
+/*   Bộ LỌC TUẦN - SIDEBAR TRÁI*/
+.week-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.week-chip {
+  padding: 12px 16px;
+  border: 2px solid rgba(240, 147, 251, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f093fb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.week-chip:hover {
+  background: rgba(240, 147, 251, 0.1);
+  transform: translateX(3px);
+  border-color: #f093fb;
+}
+
+.week-chip.active {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+.week-chip i {
+  font-size: 1rem;
+}
+
+/*    HEADER VÀ BỘ LỌC CHÍNH */
+.grammar-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.grammar-header:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.grammar-header h2 {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.9rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.grammar-header h2 i {
+  font-size: 1.8rem;
+}
+
+.grammar-header p {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Bộ lọc */
+.grammar-filters {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Ô tìm kiếm */
+.search-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.search-box i {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #f093fb;
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 16px 20px 16px 52px;
+  border: 2px solid rgba(240, 147, 251, 0.2);
+  border-radius: 14px;
+  font-size: 0.95rem;
+  background: rgba(248, 249, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #f093fb;
+  background: white;
+  box-shadow: 0 4px 16px rgba(240, 147, 251, 0.15);
+}
+
+.search-box input::placeholder {
+  color: #999;
+}
+
+/* Filter chips */
+.filter-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 11px 22px;
+  border: 2px solid rgba(240, 147, 251, 0.25);
+  background: rgba(248, 249, 255, 0.6);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f093fb;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-chip:hover {
+  background: rgba(240, 147, 251, 0.12);
+  transform: translateY(-2px);
+  border-color: #f093fb;
+}
+
+.filter-chip.active {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.35);
+}
+
+.filter-chip i {
+  font-size: 1rem;
+}
+
+  
+.lessons-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  grid-auto-rows: auto;
+  align-items: start;
+}
+
+/* Card bài học */
+.grammar-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+  max-height: none;
+  height: auto;
+}
+
+/* Viền trái gradient */
+.grammar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, #f093fb, #f5576c);
+  transition: width 0.3s ease;
+  border-radius: 18px 0 0 18px;
+}
+
+.grammar-card:hover::before {
+  width: 100%;
+  opacity: 0.08;
+  border-radius: 18px;
+}
+
+.grammar-card:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  border-color: rgba(240, 147, 251, 0.3);
+}
+
+/* Card đã hoàn thành */
+.grammar-card.completed {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(5, 150, 105, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.grammar-card.completed::before {
+  background: linear-gradient(180deg, #10b981, #059669);
+}
+
+
+.card-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  padding: 7px 14px;
+  border-radius: 25px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.card-badge.day {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.card-badge.completed {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+/* Header card */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-icon {
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 6px 20px rgba(240, 147, 251, 0.35);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.grammar-card:hover .card-icon {
+  transform: scale(1.12) rotate(8deg);
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.45);
+}
+
+.card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-info h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #333;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+}
+
+.card-info p {
+  font-size: 0.88rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Mô tả */
+.card-description {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  padding-left: 12px;
+  border-left: 3px solid rgba(240, 147, 251, 0.3);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  max-height: 90px;
+}
+
+/* Meta info */
+.card-meta {
+  display: flex;
+  gap: 18px;
+  font-size: 0.86rem;
+  color: #999;
+  padding-top: 18px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.meta-item i {
+  color: #f093fb;
+  font-size: 1rem;
+}
+
+/*MODAL HỌC NGỮ PHÁP*/
+
+#learnModal .modal-dialog {
+  max-width: 900px;
+}
+
+#learnModal .modal-content {
+  background: linear-gradient(145deg, #ffffff, #f8f9ff);
+  border: 2px solid rgba(240, 147, 251, 0.2);
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+#learnModal .modal-header {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  border-radius: 20px 20px 0 0;
+  padding: 22px 28px;
+  border-bottom: none;
+}
+
+#learnModal .modal-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#learnModal .modal-body {
+  padding: 35px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+#learnModal .modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+#learnModal .modal-body::-webkit-scrollbar-track {
+  background: rgba(240, 147, 251, 0.1);
+  border-radius: 10px;
+}
+
+#learnModal .modal-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f093fb, #f5576c);
+  border-radius: 10px;
+}
+
+/* Tabs navigation */
+.nav-pills {
+  background: rgba(240, 147, 251, 0.08);
+  padding: 8px;
+  border-radius: 14px;
+  margin-bottom: 25px;
+}
+
+.nav-pills .nav-link {
+  color: #f093fb;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+  background: rgba(240, 147, 251, 0.12);
+  color: #f093fb;
+}
+
+.nav-pills .nav-link.active {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  box-shadow: 0 4px 12px rgba(240, 147, 251, 0.3);
+}
+
+.nav-pills .nav-link i {
+  margin-right: 8px;
+}
+
+/* Nội dung bài học */
+.lesson-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.lesson-section h4 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lesson-section h4 i {
+  color: #f093fb;
+  font-size: 1.4rem;
+}
+
+/* Box lý thuyết */
+.theory-box {
+  background: rgba(240, 147, 251, 0.06);
+  padding: 22px;
+  border-radius: 14px;
+  border-left: 5px solid #f093fb;
+  line-height: 1.9;
+  color: #333;
+}
+
+.theory-box p {
+  margin-bottom: 12px;
+}
+
+.theory-box strong {
+  color: #f093fb;
+  font-weight: 700;
+}
+
+/* Box công thức */
+.formula-box {
+  background: rgba(67, 233, 123, 0.08);
+  padding: 22px;
+  border-radius: 14px;
+  border: 2px dashed rgba(67, 233, 123, 0.4);
+}
+
+.formula-item {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.05rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.formula-item:last-child {
+  margin-bottom: 0;
+}
+
+.formula-label {
+  color: #f093fb;
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+.formula-structure {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Box ví dụ */
+.examples-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.example-item {
+  background: rgba(79, 172, 254, 0.08);
+  padding: 20px;
+  border-radius: 14px;
+  border-left: 5px solid #4facfe;
+  transition: all 0.3s ease;
+}
+
+.example-item:hover {
+  background: rgba(79, 172, 254, 0.15);
+  transform: translateX(5px);
+}
+
+.example-en {
+  font-size: 1.08rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.example-vi {
+  font-size: 0.96rem;
+  color: #666;
+  padding-left: 18px;
+  border-left: 3px solid rgba(79, 172, 254, 0.3);
+}
+
+/* Box lưu ý */
+.notes-box {
+  background: rgba(251, 191, 36, 0.08);
+  padding: 22px;
+  border-radius: 14px;
+  border: 2px solid rgba(251, 191, 36, 0.25);
+}
+
+.note-item {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  display: flex;
+  gap: 14px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+.note-item:last-child {
+  margin-bottom: 0;
+}
+
+.note-item i {
+  color: #fbbf24;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.note-item p {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Footer modal */
+.lesson-footer {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: center;
+}
+
+.lesson-footer .btn {
+  padding: 14px 30px;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+}
+
+.lesson-footer .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*  EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 90px 40px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.empty-state i {
+  font-size: 4.5rem;
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+.empty-state h4 {
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  color: #999;
+  font-size: 1rem;
+}
+
+/*  RESPONSIVE */
+@media (max-width: 992px) {
+  .lessons-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lessons-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .grammar-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.7rem;
+  }
+  
+  .card-badge {
+    top: 12px;
+    right: 12px;
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+  
+  .day-item {
+    margin-left: 15px;
+  }
+  
+  .week-filters {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  #learnModal .modal-body {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter-chips {
+    flex-direction: column;
+  }
+  
+  .filter-chip {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .grammar-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .lesson-section h4 {
+    font-size: 1.15rem;
+  }
+  
+  .nav-pills {
+    flex-direction: column;
+  }
+  
+  .nav-pills .nav-link {
+    width: 100%;
+  }
+  
+  .lessons-list {
+    gap: 12px;
+  }
+}
+
+
+
+.grammar-card * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.grammar-card::before {
+  position: absolute;
+  z-index: 0;
+}
+
+
+.grammar-card .card-badge {
+  position: absolute;
+  z-index: 10;
+}
+
+
+.lessons-list {
+  isolation: isolate;
+}
+
+
+.grammar-card {
+  contain: layout style;
+  overflow: visible;
+}
+
+
+.lessons-list::after {
+  content: '';
+  display: table;
+  clear: both;
+}

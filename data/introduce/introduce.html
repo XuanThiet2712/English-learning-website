@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giới thiệu - Seven Day</title>
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="introduce.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header> 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../../index.html">
+          <i class="fas fa-graduation-cap"></i> 
+          Learn English with Seven Day
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span> 
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">
+                <i class="fas fa-home me-2"></i>Trang chủ
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link active" href="introduce.html">
+                <i class="fas fa-info-circle me-2"></i>Giới thiệu
+              </a>
+            </li>
+            
+            <!-- Learning English Dropdown -->
+            <li class="nav-item dropdown learning-dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                <i class="fas fa-book-open me-2"></i>Learning English
+              </a>
+              <div class="dropdown-menu learning-mega-menu">
+                <div class="container-fluid">
+                  <div class="row g-3">
+                    <div class="col-md-3">
+                      <div class="learning-menu-item" onclick="navigateTo('../../data/vocabulary/vocabulary.html')">
+                        <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                        <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item" onclick="navigateTo('../../data/grammar/grammar.html')">
+                        <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                        <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item" onclick="navigateTo('../../data/exercise/exercise.html')">
+                        <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                        <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item" onclick="navigateTo('../../data/game/game.html')">
+                        <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                        <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item" onclick="navigateTo('../../data/document/document.html')">
+                        <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                        <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item coming-soon">
+                        <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                        <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                        <span class="badge bg-warning">Sắp ra mắt</span>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item coming-soon">
+                        <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                        <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                        <span class="badge bg-warning">Sắp ra mắt</span>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="learning-menu-item coming-soon">
+                        <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                        <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                        <span class="badge bg-warning">Sắp ra mắt</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="../../data/forum/forum.html">
+                <i class="fas fa-comments me-2"></i>Diễn đàn
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../data/contact/contact.html">
+                <i class="fas fa-envelope me-2"></i>Liên hệ
+              </a>
+            </li>
+            <li class="nav-item" id="authButton">
+              <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+                <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro-container">
+      
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <i class="fas fa-graduation-cap"></i>
+            Chào mừng đến với Seven Day
+          </h1>
+          <p class="hero-subtitle">
+            Nền tảng học tiếng Anh thông minh với phương pháp khoa học
+          </p>
+        </div>
+      </section>
+
+      <!-- VỀ SEVEN DAY -->
+      <section class="content-section about-section">
+        <div class="section-header">
+          <i class="fas fa-lightbulb"></i>
+          <h2>Seven Day là gì?</h2>
+        </div>
+        
+        <div class="about-content">
+          <p class="lead-text">
+            <strong>Seven Day</strong> là nền tảng học tiếng Anh trực tuyến được thiết kế 
+            dựa trên <strong>các nghiên cứu khoa học về trí nhớ và học tập</strong>. 
+            Chúng tôi tin rằng học ngôn ngữ không chỉ là ghi nhớ từ vựng và ngữ pháp, 
+            mà còn là xây dựng thói quen học tập đều đặn và hiệu quả.
+          </p>
+          
+          <div class="mission-grid">
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3>Sứ mệnh</h3>
+              <p>Giúp người Việt học tiếng Anh hiệu quả thông qua phương pháp khoa học và công nghệ hiện đại</p>
+            </div>
+            
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-target"></i>
+              </div>
+              <h3>Mục tiêu</h3>
+              <p>Xây dựng cộng đồng học tập năng động, nơi mọi người có thể học và tiến bộ mỗi ngày</p>
+            </div>
+            
+            <div class="mission-card">
+              <div class="mission-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3>Giá trị</h3>
+              <p>Học tập đều đặn, kiên trì và thông minh - "Học ít mỗi ngày, nhớ nhiều mỗi tháng"</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TẠI SAO CHỌN SEVEN DAY -->
+      <section class="content-section why-section">
+        <div class="section-header">
+          <i class="fas fa-star"></i>
+          <h2>Tại sao chọn Seven Day?</h2>
+        </div>
+        
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-number">01</div>
+            <i class="fas fa-chart-line"></i>
+            <h3>Phương pháp khoa học</h3>
+            <p>Áp dụng đường cong lãng quên Ebbinghaus và kỹ thuật lặp lại ngắt quãng (Spaced Repetition)</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-number">02</div>
+            <i class="fas fa-robot"></i>
+            <h3>Hệ thống tự động</h3>
+            <p>Tự động nhắc nhở ôn tập đúng thời điểm, không cần lo lắng về lịch học</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-number">03</div>
+            <i class="fas fa-gamepad"></i>
+            <h3>Gamification</h3>
+            <p>Điểm danh hàng ngày, streak, EXP và rank tạo động lực học tập</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-number">04</div>
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Đa nền tảng</h3>
+            <p>Học mọi lúc mọi nơi trên điện thoại, máy tính bảng hay laptop</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-number">05</div>
+            <i class="fas fa-chart-pie"></i>
+            <h3>Theo dõi tiến độ</h3>
+            <p>Thống kê chi tiết giúp bạn thấy rõ sự tiến bộ qua từng ngày</p>
+          </div>
+          
+          <div class="why-card">
+            <div class="why-number">06</div>
+            <i class="fas fa-hand-holding-heart"></i>
+            <h3>Miễn phí</h3>
+            <p>Tất cả tính năng cơ bản hoàn toàn miễn phí cho mọi người</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- VẤN ĐỀ HỌC TẬP -->
+      <section class="content-section problem-section">
+        <div class="section-header">
+          <i class="fas fa-question-circle"></i>
+          <h2>Vấn đề khi học tiếng Anh truyền thống</h2>
+        </div>
+        
+        <div class="problem-grid">
+          <div class="problem-card">
+            <i class="fas fa-clock"></i>
+            <h3>Sau 20 phút</h3>
+            <p>Bạn quên <strong>42%</strong> những gì vừa học</p>
+          </div>
+          <div class="problem-card">
+            <i class="fas fa-calendar-day"></i>
+            <h3>Sau 1 ngày</h3>
+            <p>Bạn quên <strong>67%</strong> kiến thức</p>
+          </div>
+          <div class="problem-card">
+            <i class="fas fa-calendar-week"></i>
+            <h3>Sau 1 tuần</h3>
+            <p>Bạn quên <strong>75%</strong> nội dung đã học</p>
+          </div>
+          <div class="problem-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Sau 1 tháng</h3>
+            <p>Chỉ còn <strong>21%</strong> được ghi nhớ</p>
+          </div>
+        </div>
+        
+        <div class="problem-summary">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>Đây chính là lý do tại sao nhiều người học mãi mà không tiến bộ. 
+          Họ học nhiều nhưng không ôn tập đúng cách!</p>
+        </div>
+      </section>
+
+      <!-- ĐƯỜNG CONG LÃNG QUÊN -->
+      <section class="content-section curve-section">
+        <div class="section-header">
+          <i class="fas fa-brain"></i>
+          <h2>Phương pháp 1: Đường cong lãng quên</h2>
+        </div>
+        
+        <div class="curve-intro">
+          <p class="lead">
+            Được phát hiện bởi nhà tâm lý học <strong>Hermann Ebbinghaus</strong> năm 1885, 
+            đường cong lãng quên mô tả tốc độ thông tin bị lãng quên theo thời gian.
+          </p>
+        </div>
+        
+        <div class="curve-content">
+          <div class="curve-visual">
+          <img src="image/forgetting-curve-1.png" alt="đường cong lãng quên">
+          </div>
+          
+          <div class="curve-text">
+            <div class="curve-points">
+              <div class="curve-point">
+                <i class="fas fa-arrow-down"></i>
+                <span>Trí nhớ giảm nhanh chóng sau khi học lần đầu</span>
+              </div>
+              <div class="curve-point">
+                <i class="fas fa-repeat"></i>
+                <span>Ôn tập định kỳ giúp duy trì kiến thức lâu hơn</span>
+              </div>
+              <div class="curve-point">
+                <i class="fas fa-chart-line"></i>
+                <span>Mỗi lần ôn tập, đường cong dốc hơn (quên chậm hơn)</span>
+              </div>
+              <div class="curve-point">
+                <i class="fas fa-infinity"></i>
+                <span>Sau 5-7 lần ôn, kiến thức gần như vĩnh viễn</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LỊCH ÔN TẬP -->
+      <section class="content-section solution-section">
+        <div class="section-header">
+          <i class="fas fa-calendar-check"></i>
+          <h2>Lịch ôn tập thông minh của Seven Day</h2>
+        </div>
+        
+        <div class="schedule-intro">
+          <p>Hệ thống tự động nhắc nhở ôn tập đúng thời điểm để ghi nhớ tốt nhất</p>
+        </div>
+        
+        <!-- Hàng 1: 3 bước đầu -->
+        <div class="schedule-row">
+          <div class="schedule-card card-start">
+            <div class="schedule-icon">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <div class="schedule-step">Bước 1</div>
+            <h3>Học lần đầu</h3>
+            <p>Tiếp thu kiến thức mới</p>
+            <p class="schedule-action">✓ Đánh dấu "Đã học"</p>
+            <div class="schedule-badge day-0">Ngày 0</div>
+          </div>
+          
+          <div class="schedule-card">
+            <div class="schedule-icon">
+              <i class="fas fa-redo"></i>
+            </div>
+            <div class="schedule-step">Bước 2</div>
+            <h3>Ôn tập lần 1</h3>
+            <p>Củng cố sau khi học</p>
+            <p class="schedule-memory">Ghi nhớ: <strong>80%</strong></p>
+            <div class="schedule-badge day-1">Sau 1 ngày</div>
+          </div>
+          
+          <div class="schedule-card">
+            <div class="schedule-icon">
+              <i class="fas fa-sync"></i>
+            </div>
+            <div class="schedule-step">Bước 3</div>
+            <h3>Ôn tập lần 2</h3>
+            <p>Kiểm tra lại kiến thức</p>
+            <p class="schedule-memory">Ghi nhớ: <strong>85%</strong></p>
+            <div class="schedule-badge day-3">Sau 3 ngày</div>
+          </div>
+        </div>
+
+        <!-- Hàng 2: 3 bước cuối -->
+        <div class="schedule-row">
+          <div class="schedule-card">
+            <div class="schedule-icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <div class="schedule-step">Bước 4</div>
+            <h3>Ôn tập lần 3</h3>
+            <p>Ghi nhớ trung hạn</p>
+            <p class="schedule-memory">Ghi nhớ: <strong>90%</strong></p>
+            <div class="schedule-badge day-7">Sau 1 tuần</div>
+          </div>
+          
+          <div class="schedule-card">
+            <div class="schedule-icon">
+              <i class="fas fa-check-double"></i>
+            </div>
+            <div class="schedule-step">Bước 5</div>
+            <h3>Ôn tập lần 4</h3>
+            <p>Ghi nhớ dài hạn</p>
+            <p class="schedule-memory">Ghi nhớ: <strong>95%</strong></p>
+            <div class="schedule-badge day-14">Sau 2 tuần</div>
+          </div>
+          
+          <div class="schedule-card card-end">
+            <div class="schedule-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="schedule-step">Bước 6</div>
+            <h3>Ôn tập lần 5+</h3>
+            <p>Khắc sâu vĩnh viễn</p>
+            <p class="schedule-memory">Ghi nhớ: <strong>98%+</strong></p>
+            <div class="schedule-badge day-30">Sau 1 tháng</div>
+          </div>
+        </div>
+
+        <div class="schedule-note">
+          <i class="fas fa-info-circle"></i>
+          <p><strong>Lưu ý:</strong> Hệ thống sẽ tự động nhắc nhở bạn khi đến thời gian ôn tập. 
+          Bạn chỉ cần vào trang Từ vựng và làm theo hướng dẫn!</p>
+        </div>
+      </section>
+
+      <!-- PHƯƠNG PHÁP 2: GAMIFICATION -->
+      <section class="content-section gamification-section">
+        <div class="section-header">
+          <i class="fas fa-trophy"></i>
+          <h2>Phương pháp 2: Gamification - Học qua trò chơi</h2>
+        </div>
+        
+        <div class="gamification-content">
+          <p class="lead">
+            Học tập đều đặn là chìa khóa thành công. Seven Day sử dụng <strong>Gamification</strong> 
+            để tạo động lực học mỗi ngày thông qua điểm số, thành tích và thử thách.
+          </p>
+          
+          <div class="gamification-grid">
+            <div class="gamification-card">
+              <i class="fas fa-fire"></i>
+              <h3>Streak - Chuỗi ngày</h3>
+              <p>Điểm danh hằng ngày để duy trì chuỗi ngày học liên tiếp</p>
+              <div class="gamification-example">
+                <span class="badge-streak">🔥 7 ngày</span>
+                <small>Học liên tục 7 ngày!</small>
+              </div>
+            </div>
+            
+            <div class="gamification-card">
+              <i class="fas fa-star"></i>
+              <h3>EXP - Điểm kinh nghiệm</h3>
+              <p>Nhận EXP khi học từ mới, làm bài tập và chơi game</p>
+              <div class="gamification-example">
+                <span class="badge-exp">⭐ +5 EXP</span>
+                <small>Mỗi từ vựng học được</small>
+              </div>
+            </div>
+            
+            <div class="gamification-card">
+              <i class="fas fa-medal"></i>
+              <h3>Rank - Cấp độ</h3>
+              <p>Tăng rank khi tích lũy đủ EXP</p>
+              <div class="gamification-example">
+                <span class="badge-rank">🏆 Xuất sắc</span>
+                <small>600-1000 EXP</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ỨNG DỤNG TẠI SEVEN DAY -->
+      <section class="content-section application-section">
+        <div class="section-header">
+          <i class="fas fa-rocket"></i>
+          <h2>Các tính năng chính</h2>
+        </div>
+        
+        <div class="app-grid">
+          <div class="app-card">
+            <div class="app-icon vocab">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Từ vựng thông minh</h3>
+            <p>Học và ôn tập từ vựng với hệ thống nhắc nhở tự động</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Lặp lại theo chu kỳ khoa học</li>
+              <li><i class="fas fa-check"></i> Nhắc nhở đúng thời điểm</li>
+              <li><i class="fas fa-check"></i> 56+ từ vựng theo chủ đề</li>
+              <li><i class="fas fa-check"></i> Theo dõi tiến độ chi tiết</li>
+            </ul>
+          </div>
+          
+          <div class="app-card">
+            <div class="app-icon quiz">
+              <i class="fas fa-pen"></i>
+            </div>
+            <h3>Bài tập & Ngữ pháp</h3>
+            <p>Kiểm tra kiến thức với bài tập trắc nghiệm đa dạng</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Ngữ pháp từ cơ bản đến nâng cao</li>
+              <li><i class="fas fa-check"></i> Bài tập tự động chấm điểm</li>
+              <li><i class="fas fa-check"></i> Giải thích chi tiết đáp án</li>
+              <li><i class="fas fa-check"></i> Lưu kết quả học tập</li>
+            </ul>
+          </div>
+          
+          <div class="app-card">
+            <div class="app-icon game">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3>Mini Games</h3>
+            <p>Học qua trò chơi thú vị, vừa học vừa chơi</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Nhiều game đa dạng</li>
+              <li><i class="fas fa-check"></i> Bảng xếp hạng</li>
+              <li><i class="fas fa-check"></i> Nhận EXP khi chơi</li>
+              <li><i class="fas fa-check"></i> Ôn tập không nhàm chán</li>
+            </ul>
+          </div>
+          
+          <div class="app-card">
+            <div class="app-icon checkin">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Điểm danh hằng ngày</h3>
+            <p>Xây dựng thói quen học tập đều đặn mỗi ngày</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Streak liên tiếp</li>
+              <li><i class="fas fa-check"></i> Nhận EXP bonus</li>
+              <li><i class="fas fa-check"></i> Động lực học mỗi ngày</li>
+              <li><i class="fas fa-check"></i> Thống kê chi tiết</li>
+            </ul>
+          </div>
+          
+          <div class="app-card">
+            <div class="app-icon doc">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <h3>Tài liệu học tập</h3>
+            <p>Kho tài liệu phong phú cho mọi trình độ</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Ebook miễn phí</li>
+              <li><i class="fas fa-check"></i> Bài viết hữu ích</li>
+              <li><i class="fas fa-check"></i> Video bài giảng</li>
+              <li><i class="fas fa-check"></i> Cập nhật thường xuyên</li>
+            </ul>
+          </div>
+          
+          <div class="app-card">
+            <div class="app-icon forum">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Diễn đàn</h3>
+            <p>Cộng đồng học tập và chia sẻ kinh nghiệm</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check"></i> Đặt câu hỏi</li>
+              <li><i class="fas fa-check"></i> Chia sẻ kinh nghiệm</li>
+              <li><i class="fas fa-check"></i> Tìm bạn học</li>
+              <li><i class="fas fa-check"></i> Hỗ trợ lẫn nhau</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- TIPS HỌC TẬP -->
+      <section class="content-section tips-section">
+        <div class="section-header">
+          <i class="fas fa-lightbulb"></i>
+          <h2>Bí quyết học hiệu quả trên Seven Day</h2>
+        </div>
+        
+        <div class="tips-grid">
+          <div class="tip-card">
+            <i class="fas fa-clock"></i>
+            <h3>Học đều đặn</h3>
+            <p>Học 15-30 phút mỗi ngày tốt hơn học 3 tiếng một lần</p>
+          </div>
+          
+          <div class="tip-card">
+            <i class="fas fa-bell"></i>
+            <h3>Tuân thủ nhắc nhở</h3>
+            <p>Ôn tập khi hệ thống nhắc để đạt hiệu quả tốt nhất</p>
+          </div>
+          
+          <div class="tip-card">
+            <i class="fas fa-fire"></i>
+            <h3>Giữ Streak</h3>
+            <p>Điểm danh hàng ngày để xây dựng thói quen học tập</p>
+          </div>
+          
+          <div class="tip-card">
+            <i class="fas fa-heart"></i>
+            <h3>Đánh dấu từ khó</h3>
+            <p>Thêm yêu thích các từ khó để ôn tập thêm</p>
+          </div>
+          
+          <div class="tip-card">
+            <i class="fas fa-pencil-alt"></i>
+            <h3>Làm bài tập</h3>
+            <p>Kết hợp từ vựng với ngữ pháp và bài tập</p>
+          </div>
+          
+          <div class="tip-card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Chơi game</h3>
+            <p>Học qua game giúp thư giãn và ghi nhớ tốt hơn</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Footer Top -->
+      <div class="footer-top">
+        <div class="footer-col footer-about">
+          <div class="footer-brand">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Seven Day</h3>
+          </div>
+          <p class="footer-desc">
+            Nền tảng học tiếng Anh thông minh với phương pháp khoa học, 
+            giúp bạn học hiệu quả và tiến bộ mỗi ngày.
+          </p>
+          <div class="footer-social">
+            <a href="https://facebook.com" target="_blank" class="social-link facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="social-link youtube">
+              <i class="fab fa-youtube"></i>
+            </a>
+             <a href="https://github.com/XuanThiet2712/English-learning-website/" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:5101104040@student.hcmue.edu.vn" target="_blank" class="social-link email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4><i class="fas fa-book-open"></i> Học tập</h4>
+          <ul class="footer-links">
+            <li><a href="../../data/vocabulary/vocabulary.html"><i class="fas fa-chevron-right"></i> Từ vựng</a></li>
+            <li><a href="../../data/grammar/grammar.html"><i class="fas fa-chevron-right"></i> Ngữ pháp</a></li>
+            <li><a href="../../data/exercise/exercise.html"><i class="fas fa-chevron-right"></i> Bài tập</a></li>
+            <li><a href="../../data/game/game.html"><i class="fas fa-chevron-right"></i> Mini Games</a></li>
+            <li><a href="../../data/document/document.html"><i class="fas fa-chevron-right"></i> Tài liệu</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4><i class="fas fa-info-circle"></i> Về chúng tôi</h4>
+          <ul class="footer-links">
+            <li><a href="introduce.html"><i class="fas fa-chevron-right"></i> Giới thiệu</a></li>
+            <li><a href="../../data/forum/forum.html"><i class="fas fa-chevron-right"></i> Diễn đàn</a></li>
+            <li><a href="../../data/contact/contact.html"><i class="fas fa-chevron-right"></i> Liên hệ</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Chính sách bảo mật</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Điều khoản sử dụng</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4><i class="fas fa-address-book"></i> Liên hệ</h4>
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Quận 5, TP. Hồ Chí Minh, Việt Nam</span>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+84358393470">+84 358 393 470</a>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:5101104040@student.hcmue.edu.vn">5101104040@student.hcmue.edu.vn</a>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <span>Thứ 2 - Chủ nhật: 8:00 - 21:00</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p class="copyright">
+            <i class="fas fa-copyright"></i> 
+            2025 Seven Day. All rights reserved.
+          </p>
+          <p class="made-with">
+            Made with <i class="fas fa-heart"></i> in Vietnam
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+<!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- CÁC FILE JS CHO ĐĂNG NHẬP -->
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  
+  <script src="introduce.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+</body>
+</html>

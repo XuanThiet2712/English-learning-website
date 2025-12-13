@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học Tập Tiếng Anh - Seven Day</title>
+  
+  <link rel="stylesheet" href="./asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top"> 
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-graduation-cap"></i> 
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link active" href="index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data/introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+          <!-- trang Learning English  -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('data/vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('data/grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('data/exercise/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('data/game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('data/document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="data/forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="data/contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <!-- MAIN CONTAINER  -->
+  <div class="container-main">
+    <div class="row-layout">
+      
+      <!--Phanaf side trais-->
+      <aside class="sidebar">
+        <h3>
+          <i class="fas fa-bars me-2"></i>
+          Danh mục
+        </h3>
+        
+       <!-- thanfh tichs tong -->
+  <div class="progress-card">
+    <h4>
+      <i class="fas fa-trophy"></i>
+      Thành tích tổng
+    </h4>
+    <div class="progress-grid">
+      <div class="progress-box">
+        <i class="fas fa-book"></i>
+        <span class="progress-value" id="totalVocab">0</span>
+        <span class="progress-label">Từ vựng</span>
+      </div>
+      <div class="progress-box">
+        <i class="fas fa-pen"></i>
+        <span class="progress-value" id="totalExercise">0</span>
+        <span class="progress-label">Bài tập</span>
+      </div>
+      <div class="progress-box">
+        <i class="fas fa-star"></i>
+        <span class="progress-value" id="totalExp">0</span>
+        <span class="progress-label">EXP</span>
+      </div>
+      <div class="progress-box">
+        <i class="fas fa-trophy"></i>
+        <span class="progress-value" id="userRank">0</span>
+        <span class="progress-label">Xếp hạng</span>
+      </div>
+    </div>
+  </div>
+        
+        <!-- Thời gian học -->
+        <!-- <div class="progress-card" style="background: linear-gradient(135deg, #10b981, #059669);">
+          <h4>
+            <i class="fas fa-clock"></i>
+            Thời gian học
+          </h4>
+          <div class="timestudy" style="text-align: center; padding: 10px;">
+            <span style="font-size: 2.5rem; font-weight: bold; display: block;" id="studyTime">0</span>
+            <span style="font-size: 0.9rem;">phút</span>
+          </div>
+        </div> -->
+        
+        <!-- Menu -->
+        <ul class="menu-list">
+          <li><a href="data/vocabulary/vocabulary.html"><i class="fas fa-book"></i>Từ vựng</a></li>
+          <li><a href="data/grammar/grammar.html"><i class="fas fa-language"></i>Ngữ pháp</a></li>
+          <li><a href="data/exercise/exercise.html"><i class="fas fa-pen"></i>Bài tập</a></li>
+          <li><a href="data/game/game.html"><i class="fas fa-gamepad"></i>Mini Game</a></li>
+          <li><a href="data/document/document.html"><i class="fas fa-file-alt"></i>Tài liệu</a></li>
+        </ul>
+      </aside>
+
+      <!-- phan giua -->
+      <main class="main-content">
+        
+        <!-- ĐIỂM DANH -->
+        <section class="card attendance-card">
+          <!-- "attendance" -->
+        </section>
+
+      </main>
+
+      <!-- usser name info -->
+      <aside class="user-info-card" id="userCard">
+        <div class="login-required">
+          <i class="fas fa-user-circle"></i>
+          <h4>Vui lòng đăng nhập</h4>
+          <p>Đăng nhập để xem thông tin cá nhân và sử dụng đầy đủ tính năng</p>
+          <button class="btn btn-primary btn-lg" onclick="showGlobalLoginModal()">
+            <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập ngay
+          </button>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- trang dang ki-->
+  <div id="globalModals"></div>
+
+  <!-- chinh sua thong tin-->
+  <div class="modal fade" id="editProfileModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-user-edit me-2"></i>Chỉnh sửa thông tin
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editProfileForm" onsubmit="handleUpdateProfile(event)">
+            <div style="text-align: center; margin-bottom: 20px;">
+              <img id="editAvatarPreview" 
+                   style="width: 150px; height: 150px; border-radius: 50%; 
+                          border: 5px solid #667eea; object-fit: cover;" 
+                   src="" alt="Avatar">
+              <input type="file" class="form-control mt-3" id="editAvatarInput" 
+                     accept="image/*" onchange="previewEditAvatar(event)">
+              <small class="text-muted">Chọn ảnh mới để thay đổi avatar</small>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="editName" class="form-label">
+                  <i class="fas fa-signature me-2"></i>Họ tên *
+                </label>
+                <input type="text" class="form-control" id="editName" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="editGender" class="form-label">
+                  <i class="fas fa-venus-mars me-2"></i>Giới tính 
+                </label>
+                <select class="form-select" id="editGender" >
+                  <option value="Nam">Nam</option>
+                  <option value="Nữ">Nữ</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="editBirthday" class="form-label">
+                <i class="fas fa-birthday-cake me-2"></i>Ngày sinh 
+              </label>
+              <input type="date" class="form-control" id="editBirthday" >
+            </div>
+            
+            <div class="alert alert-info">
+              <i class="fas fa-info-circle me-2"></i>
+              <strong>Lưu ý:</strong> Username và email không thể thay đổi
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fas fa-save me-2"></i>Lưu thay đổi
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+  <!-- scripts -->
+  <script src="asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="js/supabase-config.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/auth-username.js"></script>
+  <script src="js/attendance.js"></script>
+  <script src="js/index-page.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>

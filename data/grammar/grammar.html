@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Học Ngữ Pháp - Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="grammar.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+        <i class="fas fa-graduation-cap"></i>
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+          <!-- Learning English Dropdown -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../exercise/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main>
+    <div class="container-main">
+      <div class="row-layout">
+        
+        <!-- ========== SIDEBAR TRÁI - LỘ TRÌNH 30 NGÀY ========== -->
+        <aside class="sidebar">
+          <h3>
+            <i class="fas fa-route me-2"></i>
+            Lộ trình 30 ngày
+          </h3>
+          
+          <!-- Thống kê tiến độ -->
+          <div class="progress-card">
+            <h4>
+              <i class="fas fa-chart-line"></i>
+              Tiến độ của bạn
+            </h4>
+            <div class="progress-grid">
+              <div class="progress-box">
+                <i class="fas fa-calendar-check"></i>
+                <span class="progress-value" id="daysCompleted">0</span>
+                <span class="progress-label">Ngày hoàn thành</span>
+              </div>
+              <div class="progress-box">
+                <i class="fas fa-percent"></i>
+                <span class="progress-value" id="completionRate">0%</span>
+                <span class="progress-label">Tỷ lệ</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bộ lọc theo tuần -->
+          <div class="week-filters">
+            <button class="week-chip active" onclick="filterByWeek('all', this)">
+              <i class="fas fa-list"></i> Tất cả
+            </button>
+            <button class="week-chip" onclick="filterByWeek(1, this)">
+              Tuần 1
+            </button>
+            <button class="week-chip" onclick="filterByWeek(2, this)">
+              Tuần 2
+            </button>
+            <button class="week-chip" onclick="filterByWeek(3, this)">
+              Tuần 3
+            </button>
+            <button class="week-chip" onclick="filterByWeek(4, this)">
+              Tuần 4
+            </button>
+          </div>
+          
+          <!-- Menu lộ trình theo ngày -->
+          <div id="roadmapList" class="roadmap-list">
+            <!-- Sẽ được render bằng JS -->
+          </div>
+        </aside>
+
+        <!-- ========== MAIN CONTENT - NỘI DUNG CHÍNH ========== -->
+        <div class="main-content">
+          
+          <!-- Header -->
+          <div class="grammar-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+              <div>
+                <h2>
+                  <i class="fas fa-language me-2"></i>
+                  Học ngữ pháp theo lộ trình
+                </h2>
+                <p class="text-muted">30 ngày để nắm vững ngữ pháp tiếng Anh cơ bản</p>
+              </div>
+              
+              <!-- Nút tiếp tục học -->
+              <button class="btn btn-success btn-lg" onclick="continueLastLesson()" 
+                      style="box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);">
+                <i class="fas fa-play me-2"></i>Tiếp tục học
+              </button>
+            </div>
+          </div>
+
+          <!-- Bộ lọc tìm kiếm -->
+          <div class="grammar-filters">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" placeholder="Tìm kiếm chủ đề ngữ pháp..." 
+                     oninput="searchGrammar()">
+            </div>
+            
+            <div class="filter-chips">
+              <button class="filter-chip active" onclick="filterByStatus('all', this)">
+                <i class="fas fa-list"></i> Tất cả
+              </button>
+              <button class="filter-chip" onclick="filterByStatus('not-started', this)">
+                <i class="fas fa-circle"></i> Chưa học
+              </button>
+              <button class="filter-chip" onclick="filterByStatus('completed', this)">
+                <i class="fas fa-check-circle"></i> Đã hoàn thành
+              </button>
+            </div>
+          </div>
+
+          <!-- Danh sách bài học -->
+          <div id="lessonsList" class="lessons-list">
+            <!-- Sẽ được render bằng JS -->
+          </div>
+
+          <!-- Empty state -->
+          <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h4>Không có bài học nào</h4>
+            <p>Hãy chọn tuần từ menu bên trái</p>
+          </div>
+        </div>
+
+        <!-- ========== SIDEBAR PHẢI - THÔNG TIN USER ========== -->
+        <aside class="user-info-card" id="userCard">
+          <div class="login-required">
+            <i class="fas fa-user-circle"></i>
+            <h4>Vui lòng đăng nhập</h4>
+            <p>Đăng nhập để lưu tiến độ học tập của bạn</p>
+            <button class="btn btn-primary btn-lg" onclick="showGlobalLoginModal()">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập ngay
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL HỌC NGỮ PHÁP -->
+  <div class="modal fade" id="learnModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-book-open me-2"></i>
+            <span id="lessonTitle">Bài học ngữ pháp</span>
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          
+          <!-- Tabs điều hướng -->
+          <ul class="nav nav-pills mb-4" id="lessonTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="theory-tab" data-bs-toggle="pill" 
+                      data-bs-target="#theory" type="button">
+                <i class="fas fa-book me-2"></i>Lý thuyết
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="examples-tab" data-bs-toggle="pill" 
+                      data-bs-target="#examples" type="button">
+                <i class="fas fa-lightbulb me-2"></i>Ví dụ
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="practice-tab" data-bs-toggle="pill" 
+                      data-bs-target="#practice" type="button">
+                <i class="fas fa-pen me-2"></i>Luyện tập
+              </button>
+            </li>
+          </ul>
+
+          <!-- Tab content -->
+          <div class="tab-content" id="lessonTabContent">
+            
+            <!-- Tab Lý thuyết -->
+            <div class="tab-pane fade show active" id="theory" role="tabpanel">
+              <div class="theory-content">
+                <h4 id="theoryTitle">Tiêu đề</h4>
+                <div id="theoryDescription" class="theory-description"></div>
+                
+                <div class="theory-structure">
+                  <h5><i class="fas fa-cog me-2"></i>Cấu trúc</h5>
+                  <div id="theoryStructure" class="structure-box"></div>
+                </div>
+                
+                <div class="theory-usage">
+                  <h5><i class="fas fa-info-circle me-2"></i>Cách dùng</h5>
+                  <div id="theoryUsage"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Ví dụ -->
+            <div class="tab-pane fade" id="examples" role="tabpanel">
+              <div id="examplesContent" class="examples-content">
+                <!-- Sẽ được render bằng JS -->
+              </div>
+            </div>
+
+            <!-- Tab Luyện tập -->
+            <div class="tab-pane fade" id="practice" role="tabpanel">
+              <div class="practice-content">
+                <div class="practice-header">
+                  <h5>Bài tập kiểm tra</h5>
+                  <span class="practice-score">
+                    Câu <span id="currentQuestion">1</span> / <span id="totalQuestions">5</span>
+                  </span>
+                </div>
+                
+                <div id="practiceQuestion" class="practice-question">
+                  <!-- Câu hỏi sẽ được render bằng JS -->
+                </div>
+                
+                <div id="practiceOptions" class="practice-options">
+                  <!-- Các đáp án sẽ được render bằng JS -->
+                </div>
+                
+                <div id="practiceResult" class="practice-result" style="display: none;">
+                  <!-- Kết quả sẽ hiện ở đây -->
+                </div>
+                
+                <div class="practice-actions">
+                  <button class="btn btn-secondary" onclick="previousQuestion()" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i> Câu trước
+                  </button>
+                  <button class="btn btn-primary" onclick="nextQuestion()" id="nextBtn">
+                    Câu sau <i class="fas fa-chevron-right"></i>
+                  </button>
+                  <button class="btn btn-success" onclick="submitPractice()" id="submitBtn" style="display: none;">
+                    <i class="fas fa-check"></i> Nộp bài
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Nút điều khiển dưới cùng -->
+          <div class="lesson-footer">
+            <button class="btn btn-success btn-lg" onclick="markLessonCompleted()">
+              <i class="fas fa-check-circle me-2"></i>Hoàn thành bài học
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS CONTAINER -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="grammar-data.js"></script>
+  <script src="grammar.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>

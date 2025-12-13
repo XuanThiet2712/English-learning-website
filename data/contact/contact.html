@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hệ - Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-graduation-cap"></i>
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+        <!-- Learning English Dropdown -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link " href="../forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="contact-container">
+      <div class="contact-grid">
+        
+        <!-- THÔNG TIN LIÊN HỆ BÊN TRÁI -->
+        <aside class="contact-info">
+          <h2>
+            <i class="fas fa-info-circle"></i>
+            Thông Tin Liên Hệ
+          </h2>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h4>Địa chỉ</h4>
+              <p>280 An Dương Vương, Phường 7, Quận 5<br>Thành phố Hồ Chí Minh</p>
+            </div>
+          </div>
+
+          
+          <!-- Điện thoại -->
+          <div class="info-section">
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="info-content">
+              <h4>Điện thoại</h4>
+              <p>Hotline: 0358 393 470<br>Văn phòng: 028 3822 900</p>
+            </div>
+
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="info-content">
+              <h4>Email</h4>
+              <p>Hỗ trợ: 5101104040@student.hcmue.edu.vn<br>Liên hệ: 5101104074@student.hcmue.edu.vn</p>
+            </div>
+          </div>
+
+          
+          <div class="social-links">
+            <a href="https://facebook.com/ngoc.phu.413182" target="_blank" class="social-link" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://github.com/Hodongocphu" target="_blank" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" class="social-link" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </aside>
+
+        <!-- FORM GỬI TIN NHẮN BÊN PHẢI -->
+        <div class="contact-form-card">
+          <h2>
+            <i class="fas fa-paper-plane"></i>
+            Gửi Tin Nhắn
+          </h2>
+          <p class="form-subtitle">Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại sớm nhất! 📧</p>
+
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="contactName" class="form-label">
+                  <i class="fas fa-user"></i>Họ và Tên *
+                </label>
+                <input type="text" class="form-control" id="contactName" 
+                       placeholder="Nguyễn Xuân Thiết" required>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="contactEmail" class="form-label">
+                  <i class="fas fa-envelope"></i>Email *
+                </label>
+                <input type="email" class="form-control" id="contactEmail" 
+                       placeholder="seven7day@gmail.con" required>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="contactPhone" class="form-label">
+                  <i class="fas fa-phone"></i>Số Điện Thoại
+                </label>
+                <input type="tel" class="form-control" id="contactPhone" 
+                       placeholder="0123456789">
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label for="contactSubject" class="form-label">
+                  <i class="fas fa-tag"></i>Chủ Đề *
+                </label>
+                <select class="form-select" id="contactSubject" required>
+                  <option value="">-- Chọn chủ đề --</option>
+                  <option value="Hỗ trợ kỹ thuật">Hỗ trợ kỹ thuật</option>
+                  <option value="Góp ý">Góp ý</option>
+                  <option value="Báo lỗi">Báo lỗi</option>
+                  <option value="Hợp tác">Hợp tác</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label">
+                <i class="fas fa-comment-dots"></i>Nội Dung *
+              </label>
+              <textarea class="form-control" id="contactMessage" rows="6" 
+                        placeholder="Nhập nội dung tin nhắn của bạn..." required></textarea>
+              <div class="char-count">
+                <span id="charCount">0</span> / 1000 ký tự
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <i class="fas fa-paper-plane me-2"></i>Gửi Tin Nhắn
+            </button>
+          </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h4>Gửi Thành Công!</h4>
+            <p>Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi trong vòng 24h.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODALS -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="contact.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+
+    // Callback khi đăng nhập thành công
+    async function onUserLoginSuccess() {
+      
+      // Auto-fill form nếu đã đăng nhập
+      if (currentUser) {
+        const nameInput = document.getElementById('contactName');
+        const emailInput = document.getElementById('contactEmail');
+        
+        if (nameInput && !nameInput.value) {
+          nameInput.value = currentUser.name || '';
+        }
+        if (emailInput && !emailInput.value) {
+          emailInput.value = currentUser.email || '';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

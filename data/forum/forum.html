@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diễn đàn - Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="forum.css">
+</head>
+
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-graduation-cap"></i>
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+        <!-- Learning English Dropdown -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../grammar/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" href="forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main>
+    <div class="container-main">
+      <div class="row-layout">
+        
+        <!-- BẢNG XẾP HẠNG -->
+        <aside class="sidebar">
+          <h3>
+            <i class="fas fa-trophy me-2"></i>
+            Bảng xếp hạng
+          </h3>
+
+          <div class="ranking-tabs">
+            <button class="ranking-tab active" onclick="switchRanking('exp', this)">
+              <i class="fas fa-star"></i> EXP
+            </button>
+            <button class="ranking-tab" onclick="switchRanking('streak', this)">
+              <i class="fas fa-fire"></i> Streak
+            </button>
+          </div>
+          
+<!-- danh sách xếp hạng -->
+          <div id="rankingList" class="ranking-list">
+          </div>
+        </aside>
+
+        <!-- BÀI VIẾT -->
+        <div class="main-content">
+          
+          <!-- HEADER -->
+          <div class="forum-header">
+            <div>
+              <h2><i class="fas fa-comments me-2"></i>Diễn đàn học tập</h2>
+              <p class="text-muted">Chia sẻ kinh nghiệm và thảo luận cùng cộng đồng</p>
+            </div>
+            <button class="btn-create-post" onclick="showNewPostModal()">
+              <i class="fas fa-plus me-2"></i>Tạo bài viết
+            </button>
+          </div>
+
+          <!-- BỘ LỌC -->
+          <div class="forum-filters">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="searchInput" placeholder="Tìm kiếm bài viết..." 
+                     oninput="searchPosts()">
+            </div>
+            
+            <div class="filter-chips">
+              <button class="filter-chip active" onclick="filterPosts('all', this)">
+                Tất cả
+              </button>
+              <button class="filter-chip" onclick="filterPosts('vocabulary', this)">
+                Từ vựng
+              </button>
+              <button class="filter-chip" onclick="filterPosts('grammar', this)">
+                Ngữ pháp
+              </button>
+              <button class="filter-chip" onclick="filterPosts('tips', this)">
+                Chia sẻ
+              </button>
+            </div>
+          </div>
+
+          <!-- DANH SÁCH BÀI VIẾT -->
+          <div id="postsList" class="posts-list">
+
+          </div>
+
+          <div id="emptyState" class="empty-state" style="display: none;">
+            <i class="fas fa-inbox"></i>
+            <h4>Chưa có bài viết nào</h4>
+            <p>Hãy là người đầu tiên chia sẻ!</p>
+            <button class="btn-create-post" onclick="showNewPostModal()">
+              <i class="fas fa-plus me-2"></i>Tạo bài viết đầu tiên
+            </button>
+          </div>
+
+        </div>
+
+        <!--  CHATcộng đồng -->
+        <aside class="sidebar chat-sidebar">
+        <h3>
+  <span>
+    <i class="fas fa-comments me-2"></i>
+    Chat cộng đồng
+  </span>
+  <span class="online-badge" id="onlineCount">0 online</span>
+</h3>
+          
+          <!-- Khung chat -->
+          <div class="chat-box">
+            <div id="chatMessages" class="chat-messages">
+      <!-- js -->
+            </div>
+            
+            <div class="chat-input-box">
+              <input type="text" id="chatInput" placeholder="Nhập tin nhắn..." 
+                     maxlength="500" onkeypress="handleChatKeyPress(event)">
+              <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL TẠO BÀI VIẾT -->
+  <div class="modal fade" id="newPostModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <i class="fas fa-plus me-2"></i>Tạo bài viết mới
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="newPostForm" onsubmit="createPost(event)">
+            <div class="mb-3">
+              <label class="form-label"><i class="fas fa-heading me-2"></i>Tiêu đề</label>
+              <input type="text" class="form-control" id="postTitle" 
+                     placeholder="Nhập tiêu đề bài viết" required>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label"><i class="fas fa-tag me-2"></i>Danh mục</label>
+              <select class="form-select" id="postCategory" required>
+                <option value="">Chọn danh mục</option>
+                <option value="vocabulary">Từ vựng</option>
+                <option value="grammar">Ngữ pháp</option>
+                <option value="tips">Chia sẻ kinh nghiệm</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label class="form-label"><i class="fas fa-align-left me-2"></i>Nội dung</label>
+              <textarea class="form-control" id="postContent" rows="6" 
+                        placeholder="Viết nội dung bài viết..." required></textarea>
+              <small class="text-muted">
+                <span id="contentCounter">0</span>/1000 ký tự
+              </small>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">
+              <i class="fas fa-paper-plane me-2"></i>Đăng bài
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- login -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="../forum/forum.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>

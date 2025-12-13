@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Game - Learn English with Seven Day</title>
+  
+  <link rel="stylesheet" href="../../asset/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../asset/fontawesome-free-7.1.0-web/css/all.min.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+    <header> 
+  <!-- navbar 234 -->
+  <nav class="navbar navbar-expand-lg  navbar-light bg-light fixed-top"> 
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../../index.html">
+        <i class="fas fa-graduation-cap"></i> 
+        <!-- icon cai mũ tốt nghiệp -->
+        Learn English with Seven Day
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span> 
+        <!-- icon nabar -->
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link " href="../../index.html">
+              <i class="fas fa-home me-2"></i>Trang chủ
+            </a>
+          </li>
+          <li class="nav-item  ">
+            <a class="nav-link" href="../../data/introduce/introduce.html">
+              <i class="fas fa-info-circle me-2"></i>Giới thiệu
+            </a>
+          </li>
+          
+          <!-- Learning English Dropdown -->
+          <li class="nav-item dropdown learning-dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">
+              <i class="fas fa-book-open me-2"></i>Learning English
+            </a>
+            <div class="dropdown-menu learning-mega-menu">
+              <div class="container-fluid">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../../data/vocabulary/vocabulary.html')">
+                      <div class="learning-icon vocabulary"><i class="fas fa-book"></i></div>
+                      <h5>Từ vựng</h5><p>Học từ vựng theo chủ đề</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../../data/grammar/grammar.html')">
+                      <div class="learning-icon grammar"><i class="fas fa-language"></i></div>
+                      <h5>Ngữ pháp</h5><p>Nắm vững cấu trúc câu</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../../data/exercise/exercise.html')">
+                      <div class="learning-icon exercise"><i class="fas fa-pen"></i></div>
+                      <h5>Bài tập</h5><p>Luyện tập trắc nghiệm</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../../data/game/game.html')">
+                      <div class="learning-icon game"><i class="fas fa-gamepad"></i></div>
+                      <h5>Mini Game</h5><p>Học qua trò chơi</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item" onclick="navigateTo('../../data/document/document.html')">
+                      <div class="learning-icon document"><i class="fas fa-file-alt"></i></div>
+                      <h5>Tài liệu</h5><p>Kho tài liệu phong phú</p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon listening"><i class="fas fa-headphones"></i></div>
+                      <h5>Listening</h5><p>Luyện nghe hiệu quả</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon speaking"><i class="fas fa-microphone"></i></div>
+                      <h5>Speaking</h5><p>Thực hành giao tiếp</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="learning-menu-item coming-soon">
+                      <div class="learning-icon exam"><i class="fas fa-certificate"></i></div>
+                      <h5>IELTS/TOEIC</h5><p>Luyện thi chứng chỉ</p>
+                      <span class="badge bg-warning">Sắp ra mắt</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../data/forum/forum.html">
+              <i class="fas fa-comments me-2"></i>Diễn đàn
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="../../data/contact/contact.html">
+              <i class="fas fa-envelope me-2"></i>Liên hệ
+            </a>
+          </li>
+          <li class="nav-item" id="authButton">
+            <a class="nav-link btn-login px-4" href="#" onclick="showGlobalLoginModal(); return false;">
+              <i class="fas fa-sign-in-alt me-2"></i>Đăng nhập
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <main>
+    <!-- MAIN CONTAINER -->
+    <div class="container-main">
+      <div class="game-layout">
+        
+        <!-- SIDEBAR TRÁI - DANH MỤC GAME -->
+        <aside class="game-sidebar">
+          <h3>
+            <i class="fas fa-gamepad me-2"></i>
+            Danh mục Game
+          </h3>
+          
+          <ul class="game-list" id="gameList">
+            <!-- <li>
+              <a href="#" class="game-item active" onclick="selectGame('word-matching'); return false;">
+                <div class="game-icon">
+                  <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="game-info">
+                  <h5>Word Matching</h5>
+                  <p>Ghép từ với nghĩa</p>
+                </div>
+              </a>
+            </li> -->
+            
+            <li>
+              <a href="#" class="game-item" onclick="selectGame('spelling-bee'); return false;">
+                <div class="game-icon">
+                  <i class="fas fa-spell-check"></i>
+                </div>
+                <div class="game-info">
+                  <h5>Spelling Bee</h5>
+                  <p>Đánh vần chính xác</p>
+                </div>
+              </a>
+            </li>
+            
+            <!-- <li>
+              <a href="#" class="game-item" onclick="selectGame('word-search'); return false;">
+                <div class="game-icon">
+                  <i class="fas fa-search"></i>
+                </div>
+                <div class="game-info">
+                  <h5>Word Search</h5>
+                  <p>Tìm từ ẩn trong bảng</p>
+                </div>
+              </a>
+            </li> -->
+            
+            <!-- <li>
+              <a href="#" class="game-item" onclick="selectGame('memory-cards'); return false;">
+                <div class="game-icon">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="game-info">
+                  <h5>Memory Cards</h5>
+                  <p>Lật thẻ tìm cặp</p>
+                </div>
+              </a>
+            </li> -->
+            
+            <li>
+              <a href="#" class="game-item" onclick="selectGame('quick-quiz'); return false;">
+                <div class="game-icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="game-info">
+                  <h5>Quick Quiz</h5>
+                  <p>Trắc nghiệm nhanh</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+
+        <!-- PHẦN GIỮA - GAME AREA -->
+        <main class="game-content">
+          <div class="game-header">
+            <h2 id="gameTitle">
+              <i class="fas fa-puzzle-piece me-2"></i>
+              Word Matching
+            </h2>
+            <div class="game-stats">
+              <div class="stat-item">
+                <i class="fas fa-star"></i>
+                <span id="currentScore">0</span>
+              </div>
+              <div class="stat-item">
+                <i class="fas fa-clock"></i>
+                <span id="gameTimer">00:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAME CONTAINER -->
+          <div class="game-container" id="gameContainer">
+            <div class="game-placeholder">
+              <i class="fas fa-gamepad"></i>
+              <h3>Chọn một game để bắt đầu</h3>
+              <p>Hãy chọn một trò chơi từ danh sách bên trái để bắt đầu học tiếng Anh vui vẻ!</p>
+            </div>
+          </div>
+        </main>
+
+        <!--BẢNG XẾP HẠNG -->
+        <aside class="leaderboard-sidebar">
+          <h3>
+            <i class="fas fa-trophy me-2"></i>
+            Bảng xếp hạng
+          </h3>
+          
+          <div class="game-selector">
+            <select class="form-select" id="leaderboardGameSelect" onchange="updateLeaderboard()">
+              <option value="word-matching">Word Matching</option>
+              <option value="spelling-bee">Spelling Bee</option>
+              <option value="word-search">Word Search</option>
+              <option value="memory-cards">Memory Cards</option>
+              <option value="quick-quiz">Quick Quiz</option>
+            </select>
+          </div>
+
+          <!-- TOP 5 -->
+          <div class="top-players">
+            <h4><i class="fas fa-crown me-2"></i>Top 5 cao thủ</h4>
+            <div id="topPlayers">
+              <!-- cập nhật bằng JS -->
+              <div class="loading-leaderboard">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Đang tải...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- VỊ TRÍ CỦA BẠN -->
+          <div class="your-rank" id="yourRank">
+            <h4><i class="fas fa-user me-2"></i>Vị trí của bạn</h4>
+            <div class="rank-placeholder">
+              <i class="fas fa-sign-in-alt"></i>
+              <p>Đăng nhập để xem vị trí</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- MODALS CONTAINER -->
+  <div id="globalModals"></div>
+
+  <!-- SCRIPTS -->
+  <script src="../../asset/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="../../js/supabase-config.js"></script>
+  <script src="../../js/modals.js"></script>
+  <script src="../../js/auth-username.js"></script>
+  <script src="game-controller.js"></script>
+  <script src="leaderboard.js"></script>
+  
+  <script>
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+  </script>
+
+</body>
+</html>
