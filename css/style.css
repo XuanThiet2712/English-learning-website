@@ -987,7 +987,7 @@ body {
   transform: translate(-50%, -50%);
   width: 50px;
   height: 50px; 
-  background: rgba(255, 255, 255, 0.3); /
+  background: rgba(255, 255, 255, 0.3); 
   border-radius: 50%;
   display: flex; 
   align-items: center; 
@@ -1033,6 +1033,7 @@ body {
 }
 
 
+
 .attendance-stats {
   display: grid; 
   grid-template-columns: repeat(2, 1fr); 
@@ -1040,7 +1041,6 @@ body {
   margin-bottom: 20px; 
 }
 
-/
 .stat-item {
   background: white; 
   border: 2px solid rgba(102, 126, 234, 0.15); 
@@ -1055,17 +1055,16 @@ body {
 
 
 .stat-item:hover {
-  transform: translateY(-3px); 
+  transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2); 
   border-color: rgba(102, 126, 234, 0.3); 
 }
 
-
 .stat-icon {
   width: 55px; 
-  height: 55px;
+  height: 55px; 
   border-radius: 12px; 
-  display: flex; 
+  display: flex;
   align-items: center; 
   justify-content: center; 
   color: white;
@@ -1079,34 +1078,36 @@ body {
   flex: 1; 
 }
 
+
 .stat-value {
   font-size: 2rem; 
   font-weight: 800; 
-  color: #333;
-  line-height: 1; 
-  margin-bottom: 3px;
+  color: #333; 
+  line-height: 1;
+  margin-bottom: 3px; 
 }
-
 
 .stat-label {
   font-size: 0.9rem; 
-  color: #666; 
+  color: #666;
   font-weight: 600; 
 }
 
+
 .attendance-note {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.05)); 
-  border: 2px solid rgba(59, 130, 246, 0.3); 
+  border: 2px solid rgba(59, 130, 246, 0.3);
   border-radius: 12px; 
   padding: 18px; 
   display: flex; 
-  align-items: center; 
+  align-items: center;
   gap: 15px; 
   transition: all 0.3s ease; 
 }
 
+
 .attendance-note:hover {
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15); 
 }
 
 
@@ -1141,15 +1142,15 @@ body {
   color: #065f46;
 }
 
-
 @media (max-width: 768px) {
+
   .calendar-week {
     gap: 8px; 
   }
   
   .calendar-day {
     padding: 12px 6px; 
-    min-height: 85px; 
+    min-height: 85px;
   }
   
   .day-number {
@@ -1163,8 +1164,9 @@ body {
   
   .check-mark i {
     font-size: 1.5rem; 
+  }
   
-
+  /* Streak */
   .streak-number {
     font-size: 3rem; 
   }
@@ -1182,7 +1184,7 @@ body {
   .stat-icon {
     width: 50px; 
     height: 50px;
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
   }
   
   .stat-value {
@@ -1191,9 +1193,10 @@ body {
 }
 
 @media (max-width: 576px) {
+ 
   .streak-main {
     flex-direction: column; 
-    gap: 15px; 
+    gap: 15px;
     padding: 20px; 
   }
   
@@ -1201,7 +1204,7 @@ body {
     text-align: center; 
   }
   
-  
+
   .calendar-week {
     gap: 6px; 
   }
@@ -1228,10 +1231,10 @@ body {
     font-size: 1.3rem; 
   }
   
-  
+
   .attendance-stats {
-    grid-template-columns: 1fr; 
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 12px; 
   }
 }
 
