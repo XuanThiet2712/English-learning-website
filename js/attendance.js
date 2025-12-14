@@ -110,7 +110,7 @@ async function updateAttendanceUI() {
   if (!currentUser || currentUser === null || currentUser === undefined) {
    
     attendanceCard.innerHTML = `
-      <h3>    <img class = "logo" src="asset/logo7day.png" alt="Logo 7 Day">  Chào mừng đến Seven Day!</h3>
+      <h3>  <img class = "logo" src="asset/logo7day.png" style="height: 40px ; width: 40px ;">  Chào mừng đến Seven Day!</h3>
       
       <div class="intro-section">
         <div class="intro-icon">
