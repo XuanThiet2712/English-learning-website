@@ -1340,3 +1340,8 @@ body {
     min-width: 220px !important;
   }
 } 
+
+.logo {
+  height: 40px;
+  width: 40px;
+}

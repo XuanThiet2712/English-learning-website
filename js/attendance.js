@@ -110,13 +110,13 @@ async function updateAttendanceUI() {
   if (!currentUser || currentUser === null || currentUser === undefined) {
    
     attendanceCard.innerHTML = `
-      <h3><i class="fas fa-graduation-cap"></i> Chào mừng đến Seven Day!</h3>
+      <h3>    <img class = "logo" src="asset/logo7day.png" alt="Logo 7 Day">  Chào mừng đến Seven Day!</h3>
       
       <div class="intro-section">
         <div class="intro-icon">
           <i class="fas fa-book-reader"></i>
         </div>
-        <h4>Học Tiếng Anh Thông Minh Mỗi Ngày</h4>
+        <h4>Nơi Học Tiếng Anh Thông Minh Mỗi Ngày</h4>
         <p>
           Phương pháp học vui nhộn, hiệu quả với hệ thống game, bài tập đa dạng 
           và điểm danh thúc đẩy động lực. Chỉ 15 phút mỗi ngày, tiến bộ rõ rệt sau 7 ngày!
@@ -161,7 +161,7 @@ async function updateAttendanceUI() {
           Bắt đầu học ngay
         </button>
         <p style="margin-top: 15px; font-size: 0.9rem; color: #999; font-style: italic;">
-          Miễn phí 100% • Không cần thẻ tín dụng
+          Miễn phí 100% • Thật ra cũng có thể không ...
         </p>
       </div>
     `;
