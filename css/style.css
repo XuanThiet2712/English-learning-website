@@ -1341,7 +1341,7 @@ body {
   }
 } 
 
-/* height: 40px;
+.logo {
+  height: 40px;
   width: 40px;
-}.logo {
-   */
+}
